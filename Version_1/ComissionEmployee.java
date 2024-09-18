@@ -5,6 +5,19 @@ public class ComissionEmployee {
     private String empName;
     private int empID;
 
+    public ComissionEmployee() {}
+
+    public ComissionEmployee(int empID, String empName) {
+        this.empID = empID;
+        this.empName = empName;
+    }
+
+    public ComissionEmployee(int empID, String empName, double totalSales) {
+        this.totalSales = totalSales;
+        this.empName = empName;
+        this.empID = empID;
+    }
+
     public void setTotalSales(double totalSales) {
         this.totalSales = totalSales;
     }
@@ -44,16 +57,16 @@ public class ComissionEmployee {
     }
 
     public void displayHourlyEmployee() {
-        System.out.println("Employee ID: " + empID);
-        System.out.println("Employee name: " + empName);
+        System.out.println(this);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Total sales: ").append(this.totalSales).append("\n");
-        sb.append("Employee name: ").append(this.empName).append("\n");
-        sb.append("Employee ID: ").append(this.empID).append("\n");
+        sb.append("Employee ID: ").append(getEmpID()).append("\n");
+        sb.append("Employee name: ").append(getEmpName()).append("\n");
+        sb.append("Total sales: ").append(getTotalSales()).append("\n");
+        sb.append("Salary: ").append(computeSalary()).append("\n");
         return sb.toString();
     }
 }

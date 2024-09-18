@@ -8,7 +8,12 @@ public class HourlyEmployee {
 
     public HourlyEmployee() {}
 
-    public HourlyEmployee(float totalHoursWorked, double ratePerHour, String empName, int empID) {
+    public HourlyEmployee(int empID, String EmpName) {
+        this.empID = empID;
+        this.empName = EmpName;
+    }
+
+    public HourlyEmployee(int empID, String empName, float totalHoursWorked, double ratePerHour) {
         this.totalHoursWorked = totalHoursWorked;
         this.ratePerHour = ratePerHour;
         this.empName = empName;
@@ -60,17 +65,17 @@ public class HourlyEmployee {
     }
 
     public void displayHourlyEmployee() {
-        System.out.println("Employee ID: " + empName);
-        System.out.println("Employee name: " + empID);
+        System.out.println(this);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Total hours worked: ").append(this.totalHoursWorked).append("\n");
-        sb.append("Rate per hour: ").append(this.ratePerHour).append("\n");
-        sb.append("Employee name: ").append(this.empName).append("\n");
-        sb.append("Employee ID: ").append(this.empID).append("\n");
+        sb.append("Employee ID: ").append(getEmpID()).append("\n");
+        sb.append("Employee name: ").append(getEmpName()).append("\n");
+        sb.append("Total hours worked: ").append(getTotalHoursWorked()).append("\n");
+        sb.append("Rate per hour: ").append(getRatePerHour()).append("\n");
+        sb.append("Salary: ").append(computeSalary()).append("\n");
         return sb.toString();
     }
 }
