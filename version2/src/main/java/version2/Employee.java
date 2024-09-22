@@ -1,7 +1,5 @@
 package version2;
 
-// Needs to have five constructors for each of its children: itself, BasePlusCommissionEmployee, ComissionEmployee, HourlyEmployee, PieceWorkerEmployee.
-
 public class Employee {
     private int empID;
     private String empName;
