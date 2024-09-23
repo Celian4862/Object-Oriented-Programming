@@ -38,14 +38,25 @@ public class MyTime {
     
     public void tickBySecond() {
         seconds++;
+        if (seconds > 59) {
+            seconds = 0;
+            tickByMinute();
+        }
     }
     
     public void tickByMinute() {
         minutes++;
+        if (minutes > 59) {
+            minutes = 0;
+            tickByHour();
+        }
     }
     
-    public void tickByHours() {
+    public void tickByHour() {
         hours++;
+        if (hours > 12) {
+            hours = 0;
+        }
     }
     
     @Override

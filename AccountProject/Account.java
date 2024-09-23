@@ -67,6 +67,9 @@ public class Account {
     }
 
     public boolean verify() {
+        if (available_balance == current_balance) {
+            return false;
+        }
         available_balance = current_balance;
         return true;
     }

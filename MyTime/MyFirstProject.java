@@ -38,7 +38,7 @@ public class MyFirstProject {
                         t.tickByMinute();
                         break;
                     case 6:
-                        t.tickByHours();
+                        t.tickByHour();
                         break;
                     case 7:
                         not_end = false;
