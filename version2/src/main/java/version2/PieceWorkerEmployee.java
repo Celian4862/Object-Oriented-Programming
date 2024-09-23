@@ -10,7 +10,16 @@ public class PieceWorkerEmployee extends Employee {
         super(empID, empName);
     }
 
-    public PieceWorkerEmployee(int totalPiecesFinished, double ratePerPiece, String empName, int empID) {
+    public PieceWorkerEmployee(String empName, int empID) {
+        super(empName, empID);
+    }
+
+    public PieceWorkerEmployee(double ratePerPiece, int totalPiecesFinished) {
+        this.ratePerPiece = ratePerPiece;
+        this.totalPiecesFinished = totalPiecesFinished;
+    }
+
+    public PieceWorkerEmployee(int empID, String empName, int totalPiecesFinished, double ratePerPiece) {
         super(empID, empName);
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
@@ -40,6 +49,7 @@ public class PieceWorkerEmployee extends Employee {
 
     public void displayHourlyEmployee() {
         System.out.println(this);
+        System.out.println("Salary: " + computeSalary());
     }
 
     @Override
@@ -49,7 +59,6 @@ public class PieceWorkerEmployee extends Employee {
         sb.append("Employee name: ").append(getEmpName()).append("\n");
         sb.append("Total hours worked: ").append(getFinishedPieces()).append("\n");
         sb.append("Rate per hour: ").append(getRate()).append("\n");
-        sb.append("Salary: ").append(computeSalary()).append("\n");
         return sb.toString();
     }
 }

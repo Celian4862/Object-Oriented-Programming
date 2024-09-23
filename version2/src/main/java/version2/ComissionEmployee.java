@@ -17,10 +17,6 @@ public class ComissionEmployee extends Employee {
         super(empID, empName);
     }
 
-    public ComissionEmployee(String empName, int empID) {
-        super(empName, empID);
-    }
-
     public ComissionEmployee(int empID, String empName, double totalSales) {
         super(empID, empName);
         this.totalSales = totalSales;
@@ -50,6 +46,7 @@ public class ComissionEmployee extends Employee {
 
     public void displayHourlyEmployee() {
         System.out.println(this);
+        System.out.println("Salary: " + computeSalary());
     }
 
     @Override
@@ -58,7 +55,6 @@ public class ComissionEmployee extends Employee {
         sb.append("Employee ID: ").append(getEmpID()).append("\n");
         sb.append("Employee name: ").append(getEmpName()).append("\n");
         sb.append("Total sales: ").append(getTotalSales()).append("\n");
-        sb.append("Salary: ").append(computeSalary()).append("\n");
         return sb.toString();
     }
 }

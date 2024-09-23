@@ -5,8 +5,20 @@ public class BasePlusCommissionEmployee extends ComissionEmployee {
 
     public BasePlusCommissionEmployee() {}
 
+    public BasePlusCommissionEmployee(double totalSales, double baseSalary) {
+        super();
+        this.setTotalSales(totalSales);
+        this.baseSalary = baseSalary;
+    }
+
     public BasePlusCommissionEmployee(int empID, String empName) {
         super(empID, empName);
+    }
+
+    public BasePlusCommissionEmployee(String empName, int empID, double baseSalary, double totalSales) {
+        super();
+        this.setTotalSales(totalSales);
+        this.baseSalary = baseSalary;
     }
 
     public BasePlusCommissionEmployee(int empID, String empName, double totalSales, double baseSalary) {
@@ -30,17 +42,17 @@ public class BasePlusCommissionEmployee extends ComissionEmployee {
     }
 
     public void displayHourlyEmployee() {
-        System.out.println(toString());
+        System.out.println(this);
+        System.out.println("Salary: " + computeSalary());
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Employee ID: ").append(getEmpID()).append("\n");
-        sb.append("Employee name: ").append(getEmpName()).append("\n");
-        sb.append("Base salary: ").append(getBaseSalary()).append("\n");
-        sb.append("Total sales: ").append(getTotalSales()).append("\n");
-        sb.append("Salary: ").append(computeSalary()).append("\n");
+        StringBuilder sb = new StringBuilder()
+            .append("Employee ID: ").append(getEmpID()).append("\n")
+            .append("Employee name: ").append(getEmpName()).append("\n")
+            .append("Base salary: ").append(getBaseSalary()).append("\n")
+            .append("Total sales: ").append(getTotalSales()).append("\n");
         return sb.toString();
     }
 }

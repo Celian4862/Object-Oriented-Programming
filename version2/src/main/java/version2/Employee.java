@@ -40,6 +40,10 @@ public class Employee {
         return empName;
     }
 
+    public void displayEmployee() {
+        System.out.println(this);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
