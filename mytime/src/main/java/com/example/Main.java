@@ -1,7 +1,9 @@
+package com.example;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MyFirstProject {
+public class Main {
     public static void main(String[] args) {
         MyTime t = new MyTime();
         Scanner input = new Scanner(System.in);

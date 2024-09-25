@@ -36,9 +36,7 @@ public class BasePlusCommissionEmployee extends ComissionEmployee {
 
     @Override
     public double computeSalary() {
-        double salary = super.computeSalary();
-        salary += baseSalary;
-        return salary;
+        return super.computeSalary() + baseSalary;
     }
 
     public void displayHourlyEmployee() {
