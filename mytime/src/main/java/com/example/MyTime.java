@@ -40,16 +40,20 @@ public class MyTime {
     
     public void advanceTime(int seconds) {
         this.seconds += seconds;
+
         this.minutes += this.seconds / 60;
-        // this.seconds -= ;
+        this.seconds = this.seconds % 60;
+
         this.hours += this.minutes / 60;
-        // this.minutes -= ;
+        this.minutes = this.seconds % 60;
+
         if (this.hours > 12) {
-            this.isPM = !isPM;
+            this.isPM = !this.isPM;
+            this.hours = this.hours % 12;
         }
-        this.hours -= this.hours / 12 * 12;
+
         if (this.hours == 0) {
-            this.hours = 1;
+            this.hours = 12;
         }
     }
     
