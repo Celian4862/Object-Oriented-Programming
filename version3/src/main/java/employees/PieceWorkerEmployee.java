@@ -1,17 +1,19 @@
-package version2;
+package employees;
 
 public class PieceWorkerEmployee extends Employee {
     private int totalPiecesFinished;
     private double ratePerPiece;
 
-    public PieceWorkerEmployee() {}
-
-    public PieceWorkerEmployee(int empID, String empName) {
-        super(empID, empName);
+    public PieceWorkerEmployee() {
+        super();
     }
 
-    public PieceWorkerEmployee(String empName, int empID) {
-        super(empName, empID);
+    public PieceWorkerEmployee(int empID, Name empName) {
+        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
+    }
+
+    public PieceWorkerEmployee(Name empName, int empID) {
+        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
     }
 
     public PieceWorkerEmployee(double ratePerPiece, int totalPiecesFinished) {
@@ -19,8 +21,8 @@ public class PieceWorkerEmployee extends Employee {
         this.totalPiecesFinished = totalPiecesFinished;
     }
 
-    public PieceWorkerEmployee(int empID, String empName, int totalPiecesFinished, double ratePerPiece) {
-        super(empID, empName);
+    public PieceWorkerEmployee(int empID, Name empName, int totalPiecesFinished, double ratePerPiece) {
+        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
     }
@@ -52,11 +54,10 @@ public class PieceWorkerEmployee extends Employee {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Employee ID: ").append(getEmpID()).append("\n");
-        sb.append("Employee name: ").append(getEmpName()).append("\n");
-        sb.append("Total hours worked: ").append(getFinishedPieces()).append("\n");
-        sb.append("Rate per hour: ").append(getRate()).append("\n");
+        StringBuilder sb = new StringBuilder()
+            .append(super.toString())
+            .append("Total hours worked: ").append(getFinishedPieces()).append("\n")
+            .append("Rate per hour: ").append(getRate()).append("\n");
         return sb.toString();
     }
 }

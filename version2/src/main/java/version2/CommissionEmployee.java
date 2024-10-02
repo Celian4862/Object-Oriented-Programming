@@ -1,23 +1,23 @@
 package version2;
 
-public class ComissionEmployee extends Employee {
+public class CommissionEmployee extends Employee {
     private double totalSales;
 
-    public ComissionEmployee() {}
+    public CommissionEmployee() {}
 
-    public ComissionEmployee(int empID) {
+    public CommissionEmployee(int empID) {
         super(empID);
     }
 
-    public ComissionEmployee(String empName) {
+    public CommissionEmployee(String empName) {
         super(empName);
     }
 
-    public ComissionEmployee(int empID, String empName) {
+    public CommissionEmployee(int empID, String empName) {
         super(empID, empName);
     }
 
-    public ComissionEmployee(int empID, String empName, double totalSales) {
+    public CommissionEmployee(int empID, String empName, double totalSales) {
         super(empID, empName);
         this.totalSales = totalSales;
     }

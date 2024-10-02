@@ -28,10 +28,6 @@ public class Name {
         this.mname = mname;
     }
 
-    public String getName() {
-        return fname + " " + mname + " " + lname;
-    }
-
     public void setFname(String fname) {
         this.fname = fname;
     }
@@ -58,5 +54,18 @@ public class Name {
 
     public String getLname() {
         return lname;
+    }
+
+    public void displayName() {
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder()
+            .append(fname).append(" ")
+            .append((getMname() == null) ? "" : getMname().charAt(0))
+            .append(lname).append("\n");
+        return sb.toString();
     }
 }

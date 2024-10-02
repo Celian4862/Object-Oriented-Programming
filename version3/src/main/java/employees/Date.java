@@ -55,4 +55,17 @@ public class Date {
     public int getDay() {
         return day;
     }
+
+    public void display() {
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder()
+            .append(getYear()).append(".")
+            .append(getMonth()).append(".")
+            .append(getDay());
+        return sb.toString();
+    }
 }

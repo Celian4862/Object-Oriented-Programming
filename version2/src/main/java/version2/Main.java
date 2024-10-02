@@ -65,7 +65,7 @@ public class Main {
         pwe5.displayHourlyEmployee();
         System.out.println(pwe5);
 
-        ComissionEmployee ce1 = new ComissionEmployee(2, "Jane Doe", 10000), ce2 = new ComissionEmployee("Jane Smith"), ce3 = new ComissionEmployee(3), ce4 = new ComissionEmployee(4, "John Smith"), ce5 = new ComissionEmployee();
+        CommissionEmployee ce1 = new CommissionEmployee(2, "Jane Doe", 10000), ce2 = new CommissionEmployee("Jane Smith"), ce3 = new CommissionEmployee(3), ce4 = new CommissionEmployee(4, "John Smith"), ce5 = new CommissionEmployee();
         ce2.setEmpID(2);
         ce2.setTotalSales(100000);
         ce3.setEmpName("Jane Smith");

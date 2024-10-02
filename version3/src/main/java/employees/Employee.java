@@ -19,11 +19,32 @@ public class Employee {
         this.empDOJ = new Date();
     }
 
+    public Employee(int empID, String fname, String lname) {
+        this.empID = empID;
+        this.empName = new Name(lname, fname);
+        this.empDOB = new Date();
+        this.empDOJ = new Date();
+    }
+
     public Employee(int empID, String fname, String mname, String lname) {
         this.empID = empID;
         this.empName = new Name(lname, fname, mname);
         this.empDOB = new Date();
         this.empDOJ = new Date();
+    }
+
+    public Employee(int empID, String fname, String mname, String lname, int year, int month, int day) {
+        this.empID = empID;
+        this.empName = new Name(lname, fname, mname);
+        this.empDOB = new Date(year, month, day);
+        this.empDOJ = new Date();
+    }
+
+    public Employee (int empID, Name empName, Date empDOB, Date empDOJ) {
+        this.empID = empID;
+        this.empName = empName;
+        this.empDOB = empDOB;
+        this.empDOJ = empDOJ;
     }
 
     public void setEmpID(int empID) {
@@ -39,7 +60,7 @@ public class Employee {
     }
 
     public String getEmpName() {
-        return empName.getName();
+        return empName.toString();
     }
 
     public void setEmpDOB(int year, int month, int day) {
@@ -56,5 +77,19 @@ public class Employee {
 
     public Date getEmpDOJ() {
         return empDOJ;
+    }
+
+    public void displayEmployee() {
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder()
+            .append("Employee ID: ").append(getEmpID()).append("\n")
+            .append("Employee name: ").append(getEmpName()).append("\n")
+            .append("Join date: ").append(empDOJ.getDate()).append("\n")
+            .append("Date of birth: ").append(empDOB.getDate()).append("\n");
+        return sb.toString();
     }
 }
