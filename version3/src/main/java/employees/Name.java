@@ -63,9 +63,9 @@ public class Name {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder()
-            .append(fname).append(" ")
-            .append((getMname() == null) ? "" : getMname().charAt(0))
-            .append(lname).append("\n");
+            .append(getFname()).append(" ")
+            .append((getMname() == null) ? "" : getMnameInitial() + ". ")
+            .append(getLname());
         return sb.toString();
     }
 }

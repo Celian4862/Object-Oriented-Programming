@@ -56,7 +56,7 @@ public class Employee {
     }
 
     public void setEmpName(String fname, String mname, String lname) {
-        empName.setName(fname, mname, lname);
+        empName.setName(lname, fname, mname);
     }
 
     public String getEmpName() {
@@ -88,8 +88,8 @@ public class Employee {
         StringBuilder sb = new StringBuilder()
             .append("Employee ID: ").append(getEmpID()).append("\n")
             .append("Employee name: ").append(getEmpName()).append("\n")
-            .append("Join date: ").append(empDOJ.getDate()).append("\n")
-            .append("Date of birth: ").append(empDOB.getDate()).append("\n");
+            .append("Join date: ").append(empDOJ.toString()).append("\n")
+            .append("Date of birth: ").append(empDOB.toString()).append("\n");
         return sb.toString();
     }
 }

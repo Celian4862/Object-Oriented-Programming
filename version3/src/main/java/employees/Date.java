@@ -28,10 +28,6 @@ public class Date {
         this.year = year;
     }
 
-    public String getDate() {
-        return year + "." + month + "." + day;
-    }
-
     public void setYear(int year) {
         this.year = year;
     }
