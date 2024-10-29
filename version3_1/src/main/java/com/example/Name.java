@@ -1,4 +1,4 @@
-package employees;
+package com.example;
 
 public class Name {
     private String fname;

@@ -1,4 +1,4 @@
-package employees;
+package com.example;
 
 public class PieceWorkerEmployee extends Employee {
     private int totalPiecesFinished;

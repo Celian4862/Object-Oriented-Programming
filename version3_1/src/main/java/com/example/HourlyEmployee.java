@@ -1,4 +1,4 @@
-package employees;
+package com.example;
 
 public class HourlyEmployee extends Employee {
     private float totalHoursWorked;
@@ -49,15 +49,7 @@ public class HourlyEmployee extends Employee {
     }
 
     public double computeSalary() {
-        double salary = 0;
-        if (totalHoursWorked <= 40) {
-            salary += totalHoursWorked * ratePerHour;
-        } else {
-            salary += 40 * ratePerHour;
-            totalHoursWorked -= 40;
-            salary += totalHoursWorked * 1.5;
-        }
-        return salary;
+        return (totalHoursWorked <= 40) ? totalHoursWorked * ratePerHour : 40 * ratePerHour + (totalHoursWorked - 40) * 1.5;
     }
 
     public void displayHourlyEmployee() {

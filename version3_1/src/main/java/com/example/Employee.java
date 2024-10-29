@@ -1,4 +1,4 @@
-package employees;
+package com.example;
 
 public class Employee {
     private int empID;
@@ -77,6 +77,10 @@ public class Employee {
 
     public Date getEmpDOJ() {
         return empDOJ;
+    }
+
+    public double computeSalary() {
+        return 0;
     }
 
     public void displayEmployee() {
