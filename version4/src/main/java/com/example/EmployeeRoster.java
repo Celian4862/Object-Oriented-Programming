@@ -1,14 +1,22 @@
 package com.example;
 
 public class EmployeeRoster {
-    private Employee[] empList;
+    private final Employee[] empList;
     private int count;
-    private int max;
+    private final int max;
 
     public EmployeeRoster(int max) {
         empList = new Employee[max];
         count = 0;
         this.max = max;
+    }
+
+    public void setEmployee(Employee e, int idx) {
+        empList[idx] = e;
+    }
+
+    public Employee getEmployee(int idx) {
+        return empList[idx];
     }
 
     public boolean addEmployee(Employee e) {
@@ -22,12 +30,12 @@ public class EmployeeRoster {
     public Employee removeEmployee(int id) {
         Employee e;
         for (int i = 0; i < count; i++) {
-            if (id != empList[i].getEmpID()) {
+            if (id == empList[i].getEmpID()) {
                 e = empList[i];
                 for (int j = i; j + 1 < count; j++) {
                     empList[j] = empList[j + 1];
-                    count--;
                 }
+                count -= i + 1;
                 return e;
             }
         }
@@ -35,43 +43,43 @@ public class EmployeeRoster {
     }
 
     public int countHE() {
-        int count = 0;
-        for (int i = 0; i < this.count; i++) {
+        int emp_count = 0;
+        for (int i = 0; i < count; i++) {
             if (empList[i] instanceof HourlyEmployee) {
-                count++;
+                emp_count++;
             }
         }
-        return count;
+        return emp_count;
     }
 
     public int countCE() {
-        int count = 0;
-        for (int i = 0; i < this.count; i++) {
+        int emp_count = 0;
+        for (int i = 0; i < count; i++) {
             if (empList[i] instanceof CommissionEmployee) {
-                count++;
+                emp_count++;
             }
         }
-        return count;
+        return emp_count;
     }
 
     public int countBPCE() {
-        int count = 0;
-        for (int i = 0; i < this.count; i++) {
+        int emp_count = 0;
+        for (int i = 0; i < count; i++) {
             if (empList[i] instanceof BasePlusCommissionEmployee) {
-                count++;
+                emp_count++;
             }
         }
-        return count;
+        return emp_count;
     }
 
     public int countPWE() {
-        int count = 0;
-        for (int i = 0; i < this.count; i++) {
+        int emp_count = 0;
+        for (int i = 0; i < count; i++) {
             if (empList[i] instanceof PieceWorkerEmployee) {
-                count++;
+                emp_count++;
             }
         }
-        return count;
+        return emp_count;
     }
 
     public void displayHE() {
