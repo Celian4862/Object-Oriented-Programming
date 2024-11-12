@@ -5,15 +5,13 @@ import java.util.List;
 
 public class EmployeeRoster {
     private List<Employee> empList;
-    private int max;
 
-    public EmployeeRoster(int max) {
-        empList = new ArrayList<>();
-        this.max = max;
+    public EmployeeRoster() {
+        empList = new ArrayList<Employee>();
     }
 
     public boolean addEmployee(Employee e) {
-        if (empList.size() < max) {
+        if (e != null) {
             empList.add(e);
             return true;
         }
