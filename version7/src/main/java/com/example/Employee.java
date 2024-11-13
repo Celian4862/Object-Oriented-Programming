@@ -1,6 +1,6 @@
 package com.example;
 
-public class Employee { // Use interfaces
+public abstract class Employee implements ComputeSalary {
     private int empID;
     private Name empName;
     private Date empDOB; // Birthday
@@ -77,10 +77,6 @@ public class Employee { // Use interfaces
 
     public Date getEmpDOJ() {
         return empDOJ;
-    }
-
-    public double computeSalary() {
-        return 0;
     }
 
     public void displayEmployee() {

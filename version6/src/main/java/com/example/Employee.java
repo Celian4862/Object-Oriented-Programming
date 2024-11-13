@@ -1,6 +1,6 @@
 package com.example;
 
-public class Employee { // Use abstract classes
+public abstract class Employee { // Use abstract classes
     private int empID;
     private Name empName;
     private Date empDOB; // Birthday
@@ -79,9 +79,7 @@ public class Employee { // Use abstract classes
         return empDOJ;
     }
 
-    public double computeSalary() {
-        return 0;
-    }
+    public abstract double computeSalary();
 
     public void displayEmployee() {
         System.out.println(this);
