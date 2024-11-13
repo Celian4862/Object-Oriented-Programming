@@ -79,10 +79,6 @@ public class Employee {
         return empDOJ;
     }
 
-    public double computeSalary() {
-        return 0;
-    }
-
     public void displayEmployee() {
         System.out.println(this);
     }

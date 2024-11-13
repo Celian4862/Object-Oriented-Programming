@@ -71,7 +71,7 @@ public class EmployeeRoster {
         System.out.printf("%-10s %-20s %-14s %-14s %-14s\n", "ID", "Name", "Date Joined", "Birth Date", "Salary");
         for (Employee emp : empList) {
             if (emp instanceof HourlyEmployee) {
-                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), emp.computeSalary());
+                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), ((HourlyEmployee) emp).computeSalary());
             }
         }
     }
@@ -80,7 +80,7 @@ public class EmployeeRoster {
         System.out.printf("%-10s %-20s %-14s %-14s %-14s\n", "ID", "Name", "Date Joined", "Birth Date", "Salary");
         for (Employee emp : empList) {
             if (emp instanceof CommissionEmployee) {
-                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), emp.computeSalary());
+                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), ((CommissionEmployee) emp).computeSalary());
             }
         }
     }
@@ -89,7 +89,7 @@ public class EmployeeRoster {
         System.out.printf("%-10s %-20s %-14s %-14s %-14s\n", "ID", "Name", "Date Joined", "Birth Date", "Salary");
         for (Employee emp : empList) {
             if (emp instanceof BasePlusCommissionEmployee) {
-                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), emp.computeSalary());
+                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), ((BasePlusCommissionEmployee) emp).computeSalary());
             }
         }
     }
@@ -98,7 +98,7 @@ public class EmployeeRoster {
         System.out.printf("%-10s %-20s %-14s %-14s %-14s\n", "ID", "Name", "Date Joined", "Birth Date", "Salary");
         for (Employee emp : empList) {
             if (emp instanceof PieceWorkerEmployee) {
-                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), emp.computeSalary());
+                System.out.printf("%-10d %-20s %-14s %-14s %-14.2f\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), ((PieceWorkerEmployee) emp).computeSalary());
             }
         }
     }
@@ -106,7 +106,18 @@ public class EmployeeRoster {
     public void displayAllEmployees() {
         System.out.printf("%-10s %-20s %-14s %-14s %-14s %-32s\n", "ID", "Name", "Date Joined", "Birth Date", "Salary", "Type of Employee");
         for (Employee emp : empList) {
-            System.out.printf("%-10d %-20s %-14s %-14s %-14.2f %-32s\n", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ(), emp.computeSalary(), emp.getClass().getSimpleName());
+            System.out.printf("%-10d %-20s %-14s %-14s", emp.getEmpID(), emp.getEmpName(), emp.getEmpDOB(), emp.getEmpDOJ());
+            if (emp instanceof HourlyEmployee) {
+                System.out.printf("%-14.2f ", ((HourlyEmployee) emp).computeSalary());
+            } else if (emp instanceof PieceWorkerEmployee) {
+                System.out.printf("%-14.2f ", ((PieceWorkerEmployee) emp).computeSalary());
+            } else if (emp instanceof CommissionEmployee) {
+                System.out.printf("%-14.2f ", ((CommissionEmployee) emp).computeSalary());
+            } else if (emp instanceof BasePlusCommissionEmployee) {
+                System.out.printf("%-14.2f ", ((BasePlusCommissionEmployee) emp).computeSalary());
+            }
+            
+            System.out.printf("%-32s\n", emp.getClass().getSimpleName());
         }
     }
 }

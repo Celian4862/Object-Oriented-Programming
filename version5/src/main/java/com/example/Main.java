@@ -2,7 +2,7 @@ package com.example;
 
 public class Main {
     public static void main(String[] args) {
-        EmployeeRoster roster = new EmployeeRoster(10);
+        EmployeeRoster roster = new EmployeeRoster();
         roster.addEmployee(new HourlyEmployee(1, new Name("Doe", "John"), new Date(1997, 1, 15), new Date(2024, 5, 10), 12.3f, 1.5));
         // roster.addEmployee(new HourlyEmployee(1, new Name("Doe", "John"), new Date(1997, 1, 15), new Date(2024, 5, 10), 12.3f, 1.5));
         roster.addEmployee(new CommissionEmployee(2, new Name("Doe", "John"), new Date(1997, 1, 15), new Date(2024, 5, 10), 100.15));
